@@ -1,19 +1,27 @@
-# Entorno virtual
+# Entorno virtual de Python
 .venv/
 
-# Variables de entorno
+# Variables de entorno y credenciales
 .env
+.env.*
+!.env.example
 
-# Caché de Python
+# Dependencias de Node.js
+node_modules/
+
+# Archivos de compilacion
+dist/
+
+# Cache de Python
 __pycache__/
 *.py[cod]
 
-# VS Code
+# Configuracion local de VS Code
 .vscode/
 
 # Archivos del sistema
 .DS_Store
 Thumbs.db
+
 # Cola local de metricas pendientes del agente
 agente_monitoreo/metricas_pendientes.jsonl
- echo # Cola local de metricas pendientes del agente echo agente_monitoreo/metricas_pendientes.jsonl

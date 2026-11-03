@@ -1,4 +1,6 @@
 from fastapi import FastAPI, Depends
+# Importamos el middleware para permitir la comunicación entre diferentes orígenes.
+from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
 from sqlalchemy.orm import Session
 
@@ -38,6 +40,20 @@ app = FastAPI(
     version="1.0.0"
 )
 
+# Configuramos los orígenes que tienen permiso para comunicarse con el backend.
+origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173"
+]
+
+# Registramos el middleware CORS en la aplicación.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Registra las rutas relacionadas con las sucursales.
 app.include_router(sucursales_router)
