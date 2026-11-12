@@ -8,6 +8,9 @@ import DashboardView from '../views/DashboardView.vue'
 // Importamos la vista que mostrará el listado de servidores.
 import ServidoresView from '../views/ServidoresView.vue'
 
+// Importamos la vista del módulo de mantenimientos.
+import MantenimientosView from '../views/MantenimientosView.vue'
+
 // Definimos las rutas de navegación de nuestra aplicación.
 const routes = [
   {
@@ -21,6 +24,12 @@ const routes = [
     path: '/servidores',
     name: 'servidores',
     component: ServidoresView,
+  },
+  {
+    // Página que mostrará los mantenimientos registrados.
+    path: '/mantenimientos',
+    name: 'mantenimientos',
+    component: MantenimientosView,
   },
 ]
 
